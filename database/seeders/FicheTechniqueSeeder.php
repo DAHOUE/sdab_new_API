@@ -2,14 +2,10 @@
 
 namespace Database\Seeders;
 
-<<<<<<< HEAD
-use App\Prix;
-=======
-use App\Models\Prix;
->>>>>>> 48c362d74416c4731deb8d73c8ca0b4a025e85be
+use App\FicheTechnique;
 use Illuminate\Database\Seeder;
 
-class PrixSeeder extends Seeder
+class FicheTechniqueSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,6 +14,6 @@ class PrixSeeder extends Seeder
      */
     public function run()
     {
-        Prix::factory()->count(5)->create();
+        FicheTechnique::factory()->count(5)->create();
     }
 }

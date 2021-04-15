@@ -1,12 +1,17 @@
 created:
     - database/factories/Models/ExploitationFactory.php
+<<<<<<< HEAD
     - database/factories/Models/FicheTechniqueFactory.php
+=======
+    - database/factories/Models/TicheTechniqueFactory.php
+>>>>>>> 48c362d74416c4731deb8d73c8ca0b4a025e85be
     - database/factories/Models/ClientFactory.php
     - database/factories/Models/CommandeFactory.php
     - database/factories/Models/ProduitFactory.php
     - database/factories/Models/LigneCommandeFactory.php
     - database/factories/Models/MarcheFactory.php
     - database/factories/Models/PrixFactory.php
+<<<<<<< HEAD
     - database/migrations/2021_04_15_162654_create_exploitations_table.php
     - database/migrations/2021_04_15_162655_create_fiche_techniques_table.php
     - database/migrations/2021_04_15_162656_create_clients_table.php
@@ -40,3 +45,38 @@ models:
     Models\ligne_commande: { commande_id: 'id foreign', produit_id: 'id foreign', quantite_en_stock: double, categorie: string, timestamps: timestamps, softdeletes: softDeletes }
     Models\marche: { nom: string, timestamps: timestamps, softdeletes: softDeletes }
     Models\prix: { date_debut: date, date_fin: date, statut: string, prix: integer, produit_id: 'id foreign', marche_id: 'id foreign', timestamps: timestamps, softdeletes: softDeletes }
+=======
+    - database/migrations/2021_04_15_172329_create_exploitations_table.php
+    - database/migrations/2021_04_15_172330_create_tiche_techniques_table.php
+    - database/migrations/2021_04_15_172331_create_clients_table.php
+    - database/migrations/2021_04_15_172332_create_commandes_table.php
+    - database/migrations/2021_04_15_172333_create_produits_table.php
+    - database/migrations/2021_04_15_172334_create_ligne_commandes_table.php
+    - database/migrations/2021_04_15_172335_create_marches_table.php
+    - database/migrations/2021_04_15_172336_create_prixes_table.php
+    - app/Models/Exploitation.php
+    - app/Models/TicheTechnique.php
+    - app/Models/Client.php
+    - app/Models/Commande.php
+    - app/Models/Produit.php
+    - app/Models/LigneCommande.php
+    - app/Models/Marche.php
+    - app/Models/Prix.php
+    - database/seeders/ExploitationSeeder.php
+    - database/seeders/FicheTechniqueSeeder.php
+    - database/seeders/ClientSeeder.php
+    - database/seeders/CommandeSeeder.php
+    - database/seeders/ProduitSeeder.php
+    - database/seeders/LigneCommandeSeeder.php
+    - database/seeders/MarcheSeeder.php
+    - database/seeders/PrixSeeder.php
+models:
+    Models\Exploitation: { ville: string, quartier: string, superficie: integer, longitude: double, latitude: double, cultiva: string, user_id: 'id foreign', date_creation: date, timestamps: timestamps, softdeletes: softDeletes }
+    Models\TicheTechnique: { ethrellage: string, mode_plantation: string, densite: string, date_tif: date, exploitation_id: 'id foreign', marqueur: string, quantite_a_produire: integer, timestamps: timestamps, softdeletes: softDeletes }
+    Models\Client: { nom: string, prenom: string, contact: string, adresse: string, timestamps: timestamps, softdeletes: softDeletes }
+    Models\Commande: { date: date, client_id: 'id foreign', montant_total: integer, mode_retrait: string, date_livraison_souhaite: date, softdeletes: softDeletes }
+    Models\Produit: { designation: string, type: string, quantite_en_stock: integer, categorie: string, timestamps: timestamps, softdeletes: softDeletes }
+    Models\LigneCommande: { commande_id: 'id foreign', produit_id: 'id foreign', quantite_en_stock: double, categorie: string, timestamps: timestamps, softdeletes: softDeletes }
+    Models\Marche: { nom: string, timestamps: timestamps, softdeletes: softDeletes }
+    Models\Prix: { date_debut: date, date_fin: date, statut: string, prix: integer, produit_id: 'id foreign', marche_id: 'id foreign', timestamps: timestamps, softdeletes: softDeletes }
+>>>>>>> 48c362d74416c4731deb8d73c8ca0b4a025e85be

@@ -5,8 +5,13 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Marche;
+<<<<<<< HEAD
 use App\Models\Produit;
 use App\Models\prix;
+=======
+use App\Models\Prix;
+use App\Models\Produit;
+>>>>>>> 48c362d74416c4731deb8d73c8ca0b4a025e85be
 
 class PrixFactory extends Factory
 {

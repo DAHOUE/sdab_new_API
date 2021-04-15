@@ -4,7 +4,11 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+<<<<<<< HEAD
 use App\Models\produit;
+=======
+use App\Models\Produit;
+>>>>>>> 48c362d74416c4731deb8d73c8ca0b4a025e85be
 
 class ProduitFactory extends Factory
 {

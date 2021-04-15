@@ -5,7 +5,11 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Client;
+<<<<<<< HEAD
 use App\Models\commande;
+=======
+use App\Models\Commande;
+>>>>>>> 48c362d74416c4731deb8d73c8ca0b4a025e85be
 
 class CommandeFactory extends Factory
 {
