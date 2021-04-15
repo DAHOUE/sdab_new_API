@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductsTable extends Migration
+class CreateMarchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('marches', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->float('price_achat', 8, 2)->nullable();
-            $table->float('price_vente', 8, 2)->nullable();
-            $table->integer('quantity')->nullable();
+            $table->string('nom');
+            $table->softDeletes();
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -30,6 +32,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('marches');
     }
 }

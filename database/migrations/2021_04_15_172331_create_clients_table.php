@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArticlesTable extends Migration
+class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,19 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->float('prix', 8, 2);
-            $table->string('origin');
-            $table->string('destinatin');
-            $table->boolean('status');
+            $table->string('prenom');
+            $table->string('contact');
+            $table->string('adresse');
+            $table->softDeletes();
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -31,6 +35,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('clients');
     }
 }

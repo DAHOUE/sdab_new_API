@@ -1,0 +1,77 @@
+models:
+
+  Models\Exploitation:
+    ville: string
+    quartier: string
+    superficie: integer
+    longitude: double
+    latitude: double
+    cultiva: string
+    user_id: id foreign
+    date_creation: date
+    timestamps: true
+    softDeletes: true
+
+  Models\TicheTechnique:
+    ethrellage: string
+    mode_plantation: string
+    densite: string
+    date_tif: date
+    exploitation_id: id foreign
+    marqueur: string
+    quantite_a_produire: integer
+    timestamps: true
+    softDeletes: true
+
+
+  Models\Client:
+    nom: string
+    prenom: string
+    contact: string
+    adresse: string
+    timestamps: true
+    softDeletes: true
+
+  Models\Commande:
+    date: date
+    client_id: id foreign
+    montant_total: integer
+    mode_retrait: string
+    date_livraison_souhaite: date
+    softDeletes: true
+
+  Models\Produit:
+    designation: string
+    type: string
+    quantite_en_stock: integer
+    categorie: string
+    timestamps: true
+    softDeletes: true
+
+  Models\LigneCommande:
+    commande_id: id foreign
+    produit_id: id foreign
+    quantite_en_stock: double
+    categorie: string
+    timestamps: true
+    softDeletes: true
+
+  Models\Marche:
+    nom: string
+    timestamps: true
+    softDeletes: true
+
+  Models\Prix:
+    date_debut: date
+    date_fin: date
+    statut: string
+    prix: integer
+    produit_id: id foreign
+    marche_id: id foreign
+    timestamps: true
+    softDeletes: true
+
+
+seeders: Exploitation, FicheTechnique, Client, Commande, Produit, LigneCommande, Marche, Prix
+
+
