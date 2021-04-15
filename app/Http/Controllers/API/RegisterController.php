@@ -41,6 +41,7 @@
            $user->password = bcrypt($request->password);
            $success['token'] =  $user->createToken('MyApp')->accessToken;
            $user->save();
+           $user->remember_token = $success['token'];
            $success['nom'] =  $user->nom;
 
 
@@ -56,9 +57,8 @@
        {
            if(Auth::attempt(['phone' => $request->phone, 'password' => $request->password])){
                $user = Auth::user();
-               //$success['token'] =  $user->remember_token;
+               $success['token'] =  $user->createToken('MyApp')->accessToken;
                $success['nom'] =  $user->nom;
-
                return $this->sendResponse($success, 'User login successfully.');
            }
            else{
