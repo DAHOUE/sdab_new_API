@@ -4,7 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\RegisterController;
-use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\API\ExploitationController;
+use App\Http\Controllers\API\FicheTechniqueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +18,15 @@ use App\Http\Controllers\API\ProductController;
 |
 */
 
+
 Route::post('register', [RegisterController::class, 'register']);
 Route::post('login', [RegisterController::class, 'login']);
-Route::post('articles', [ArticleController::class, 'creeArticle']);
+Route::middleware('auth:api')->group( function () {
+    Route::resource('exploitation', ExploitationController::class);
+});
 
 Route::middleware('auth:api')->group( function () {
-    Route::resource('products', ProductController::class);
-
+    Route::resource('fiche_technique', FicheTechniqueController::class);
 });
+
+

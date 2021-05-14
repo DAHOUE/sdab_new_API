@@ -59,6 +59,11 @@
                //$success['token'] =  $user->remember_token;
                $success['nom'] =  $user->nom;
 
+               ///ceci est l'ajout que j'ai fait le 09/05/2021 pour le token. Il s'agit de tout ce qu'ily a entre les ///.
+               $accessToken = auth()->user()->createToken('authToken')->accessToken;
+			   $success['token'] = $accessToken;
+               ///
+
                return $this->sendResponse($success, 'User login successfully.');
            }
            else{
